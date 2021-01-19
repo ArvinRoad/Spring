@@ -32,6 +32,23 @@ junit依赖
         </dependency>
 ```
 
+context约束
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context = "http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/context
+        http://www.springframework.org/scchema/context/spring-context.xsd">
+  
+        <!--context依赖支持-->
+        <context:annotation-config/>
+  
+</beans>
+```
+
 ## 注解说明
 - @Autowired : 自动装配，通过类型(byType)。名字
 
@@ -40,4 +57,10 @@ junit依赖
 - @Nullable : 字段标记的注解，说明这个字段可以为null
 
 - @Resource : 自动装配，通过名字(byName)。类型
+
+- @Component : 组件，放于类上，说明类被Spring管理了(就是所谓的Bean)
+
+
+
+
 
