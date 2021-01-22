@@ -48,6 +48,30 @@ context约束
   
 </beans>
 ```
+导入SpringAOP的依赖包
+```xml
+<!-- https://mvnrepository.com/artifact/org.aspectj/aspectjweaver -->
+<dependency>
+    <groupId>org.aspectj</groupId>
+    <artifactID>aspectjweaver</artifactID>
+    <version>1.9.4</version>
+</dependency>
+```
+
+SpringAOP的applicationContext.xml配置文件
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        https://www.springframework.org/schema/beans/spring-beans.xsd
+        http://www.springframework.org/schema/aop 
+        https://www.springframework.org/schema/aop/spring-aop.xsd">
+  
+
+</beans>
+```
 
 ## 注解说明
 - @Autowired : 自动装配，通过类型(byType)。名字
