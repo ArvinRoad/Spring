@@ -38,7 +38,7 @@
 
     <!--方式3：注解实现AOP-->
     <bean id="annotationPointCut" class="com.Demo.diy.AnnotationPointCut"/>
-    <!--开启注解支持，自动代理-->
-    <aop:aspectj-autoproxy/>
+    <!--开启注解支持，自动代理 JDK(默认是这个实现 proxy-target-class="false") cglib(proxy-target-class="true)-->
+    <aop:aspectj-autoproxy proxy-target-class="false"/>
 
 </beans>
