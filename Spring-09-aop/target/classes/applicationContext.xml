@@ -24,16 +24,21 @@
     </aop:config>-->
 
     <!--方式2：自定义类-->
-    <bean id="diy" class="com.Demo.diy.DiyPointCut"/>
-    <aop:config>
-        <!--自定义切面，ref 要引用的类-->
-        <aop:aspect ref="diy">
-            <!--切入点-->
-            <aop:pointcut id="point" expression="execution(* com.Demo.service.UserServiceImpl.*(..))"/>
-            <!--通知，类中的方法-->
-            <aop:before method="before" pointcut-ref="point"/>
-            <aop:after method="after" pointcut-ref="point"/>
-        </aop:aspect>
-    </aop:config>
+<!--    <bean id="diy" class="com.Demo.diy.DiyPointCut"/>-->
+<!--    <aop:config>-->
+<!--        &lt;!&ndash;自定义切面，ref 要引用的类&ndash;&gt;-->
+<!--        <aop:aspect ref="diy">-->
+<!--            &lt;!&ndash;切入点&ndash;&gt;-->
+<!--            <aop:pointcut id="point" expression="execution(* com.Demo.service.UserServiceImpl.*(..))"/>-->
+<!--            &lt;!&ndash;通知，类中的方法&ndash;&gt;-->
+<!--            <aop:before method="before" pointcut-ref="point"/>-->
+<!--            <aop:after method="after" pointcut-ref="point"/>-->
+<!--        </aop:aspect>-->
+<!--    </aop:config>-->
+
+    <!--方式3：注解实现AOP-->
+    <bean id="annotationPointCut" class="com.Demo.diy.AnnotationPointCut"/>
+    <!--开启注解支持，自动代理-->
+    <aop:aspectj-autoproxy/>
 
 </beans>
