@@ -135,9 +135,85 @@ SpringAOP的applicationContext.xml配置文件
           <artifactId>mybatis-spring</artifactId>
           <version>2.0.6</version>
         </dependency>
+      <!--lombok 新增的jar包-->
+      <dependency>
+        <groupId>org.projectlombok</groupId>
+        <artifactId>lombok</artifactId>
+        <version>1.16.10</version>
+      </dependency>
     </dependencies>
 
 </project>
+```
+
+Mybatis核心配置文件模板(mybatis-config.xml文件)
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--configuration核心配置文件-->
+<configuration>
+  
+  
+  
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis? useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1917723401Syc"/>
+            </dataSource>
+        </environment>
+    </environments>
+</configuration>
+```
+
+Mybatis核心配置常用模板
+```xml
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<!--configuration核心配置文件-->
+<configuration>
+    <typeAliases>
+        <!--设置别名-->
+        <package name="com.Demo.pojo"/>
+    </typeAliases>
+    
+    <!--连接数据库-->
+    <environments default="development">
+        <environment id="development">
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="com.mysql.jdbc.Driver"/>
+                <property name="url" value="jdbc:mysql://localhost:3306/mybatis? useSSL=true&amp;useUnicode=true&amp;characterEncoding=UTF-8"/>
+                <property name="username" value="root"/>
+                <property name="password" value="1917723401Syc"/>
+            </dataSource>
+        </environment>
+    </environments>
+    
+    
+</configuration>
+```
+
+Maven静态资源过滤问题修复
+```xml
+<build>
+    <resources>
+        <resource>
+            <directory>src/main/resources</directory>
+            <includes>
+                <include>**/*.xml</include>
+            </includes>
+            <filtering>true</filtering>
+        </resource>
+    </resources>
+</build>
 ```
 
 ## 注解说明
