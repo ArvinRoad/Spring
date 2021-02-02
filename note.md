@@ -86,12 +86,7 @@ SpringAOP的applicationContext.xml配置文件
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>Spring-10-mybatis</artifactId>
-
-    <properties>
-        <maven.compiler.source>8</maven.compiler.source>
-        <maven.compiler.target>8</maven.compiler.target>
-    </properties>
-
+  
     <dependencies>
         <!--junit-->
         <dependency>
@@ -151,7 +146,7 @@ Mybatis核心配置文件模板(mybatis-config.xml文件)
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+        http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!--configuration核心配置文件-->
 <configuration>
   
@@ -168,6 +163,7 @@ Mybatis核心配置文件模板(mybatis-config.xml文件)
             </dataSource>
         </environment>
     </environments>
+        
 </configuration>
 ```
 
@@ -176,7 +172,7 @@ Mybatis核心配置常用模板
 <?xml version="1.0" encoding="UTF-8" ?>
 <!DOCTYPE configuration
         PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
-        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+        http://mybatis.org/dtd/mybatis-3-config.dtd">
 <!--configuration核心配置文件-->
 <configuration>
     <typeAliases>
